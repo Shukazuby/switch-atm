@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch ATM</title>
+</head>
+<body>
+    <script>
+        alert("Please insert your card")
+        alert("Welcome to Zbank")
+        let accBalance = 200000;
+   let pin = prompt("Enter pin:")
+    switch (true) {
+        case pin > 9999:
+            alert("Enter the right pin ")
+                break;
+        default:{
+            alert("Welcome to Zbank")
+            let tranType = prompt(`Transaction type
+           1.> Withdrawal        2.> Transfers
+           3.> Airtime           4.> Balance Inquiry
+           `)
+                switch(tranType){
+                    case "1":
+                    withAmount = prompt("Enter Amount:")
+                     switch(true){
+                        case withAmount > accBalance:
+                            alert("Insufficient Funds. Try again.")
+                            break;
+                        case withAmount < 1000:
+                            alert("You can't withdraw less than 1000 naira")
+                            break;
+                        default:
+                    alert("Processing Transaction. Please Wait.")
+                    alert("Successful. Remove your cash")
+                    alert("Thank you for using Zbank")
+                    break;
+                     }
+                    break;
+                    case "2":
+                    transf = prompt("Enter receiver's account:")
+                    recBack = prompt(`Enter receiver's bank:
+                    1.> GTBank         2.> Access Bank
+                    `)
+                    transAmount = prompt("Enter Amount:")
+                     switch(true){
+                        case transAmount > accBalance:
+                            alert("Insufficient Funds. Try again.")
+                            break;
+                        default:
+                    alert("Processing Transaction. Please Wait.")
+                    alert(`You have successfully transferred ${transAmount} to ${transf} `)
+                    alert("Remove your card. Thank you for using Zbank")
+                    break;
+                     }
+                    break;
+                    
+                default:
+                    alert("Pick from the option")
+                    break;
+                }
+
+             break;       
+             }
+        }
+   
+    </script>
+</body>
+</html>
