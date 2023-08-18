@@ -8,7 +8,6 @@
 <body>
     <script>
         alert("Please insert your card")
-        alert("Welcome to Zbank")
         let accBalance = 200000;
    let pin = prompt("Enter pin:")
     switch (true) {
@@ -19,7 +18,6 @@
             alert("Welcome to Zbank")
             let tranType = prompt(`Transaction type
            1.> Withdrawal        2.> Transfers
-           3.> Airtime           4.> Balance Inquiry
            `)
                 switch(tranType){
                     case "1":
@@ -42,6 +40,7 @@
                     transf = prompt("Enter receiver's account:")
                     recBack = prompt(`Enter receiver's bank:
                     1.> GTBank         2.> Access Bank
+                    3.> Zenith         4.> First Bank
                     `)
                     transAmount = prompt("Enter Amount:")
                      switch(true){
