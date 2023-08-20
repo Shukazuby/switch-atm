@@ -18,10 +18,12 @@
             alert("Welcome to Zbank")
             let tranType = prompt(`Transaction type
            1.> Withdrawal        2.> Transfers
+           3.> Airtime           4.> Balance Inquiry
+
            `)
                 switch(tranType){
                     case "1":
-                    withAmount = prompt("Enter Amount:")
+                  let withAmount = prompt("Enter Amount:")
                      switch(true){
                         case withAmount > accBalance:
                             alert("Insufficient Funds. Try again.")
@@ -32,29 +34,60 @@
                         default:
                     alert("Processing Transaction. Please Wait.")
                     alert("Successful. Remove your cash")
+                    alert(`Your new balance is ${accBalance - withAmount}`)
                     alert("Thank you for using Zbank")
                     break;
                      }
                     break;
                     case "2":
-                    transf = prompt("Enter receiver's account:")
-                    recBack = prompt(`Enter receiver's bank:
+                   let transf = prompt("Enter receiver's account:")
+                   let recBack = prompt(`Enter receiver's bank:
                     1.> GTBank         2.> Access Bank
                     3.> Zenith         4.> First Bank
                     `)
-                    transAmount = prompt("Enter Amount:")
+                  let transAmount = prompt("Enter Amount:")
                      switch(true){
                         case transAmount > accBalance:
                             alert("Insufficient Funds. Try again.")
                             break;
                         default:
                     alert("Processing Transaction. Please Wait.")
-                    alert(`You have successfully transferred ${transAmount} to ${transf} `)
+                    alert(`You have successfully transferred NGN${transAmount} to ${transf} `)
+                    alert(`Your new balance is ${accBalance - transAmount}`)
                     alert("Remove your card. Thank you for using Zbank")
                     break;
                      }
                     break;
-                    
+
+                case "3":
+                let airPhone = prompt("Enter Phone Number")
+                  let airAmount = prompt("Enter Amount:")
+                     switch (true){
+                        case airAmount > "0":
+                            alert(`You are about to buy an airtime of NGN${airAmount} for ${airPhone}`)
+                            alert(`Your new balance is ${accBalance - airAmount}`)
+                            break;  
+                          case airAmount > accBalance:
+                            alert(`Insufficient balance to purchase airtime of NGN${airAmount}`)
+                          break;  
+
+                          default:
+                    alert("Error. Please check you account balance and try again")
+                    break;
+                }
+                 break;   
+                 
+                 case "4":
+                    switch("4"){
+                        case "4":
+                            alert(`Your balance is NGN${accBalance}`)
+                            break
+                        default:
+                    alert("Try again")
+                    break;
+                    }
+                    break;
+
                 default:
                     alert("Pick from the option")
                     break;
@@ -67,3 +100,16 @@
     </script>
 </body>
 </html>
+
+<!-- case "3":
+                    let airPhone = +prompt("Enter Phone Number:")
+                     let airAmount = +prompt("Enter Amount:")
+                     switch (true){
+                        case airAmount > 0 && < accBalance:
+                            alert(`You are about to buy an airtime of ${airAmount} for ${airPhone}`)
+                          break;  
+                        ||
+                          default:
+                    alert("Wrong input. Please check you account balance and try again")
+                    break;
+                } -->
